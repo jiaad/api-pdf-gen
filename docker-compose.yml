@@ -1,0 +1,19 @@
+version: '3'
+  
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    image: nodejs-backend
+    container_name: nodejs-backend-ctr
+    restart: unless-stopped
+    ports:
+      - 1010:3000
+    volumes:
+      - ./backend/:/usr/src/app
+      - ./backend/:/usr/src/app/node_modules
+    command: npm start
+      
+volumes:
+  node_modules:
