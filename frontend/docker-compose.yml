@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  front:
+    container_name: front
+    image: node:latest
+    ports:
+      - 5173:5173
+    command: npm run install && npm run dev

@@ -4,19 +4,26 @@
   "private": true,
   "scripts": {
     "start": "nodemon --exec ts-node app.ts"
-
   },
   "dependencies": {
+    "@prisma/client": "^5.9.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "jspdf": "^2.5.1",
+    "morgan": "~1.9.1",
+    "pdf-creator-node": "^2.3.5",
+    "pdfkit": "^0.14.0"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.6",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
-    "@types/node": "^20.11.16",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.11.19",
+    "@types/pdfkit": "^0.13.4",
     "nodemon": "^3.0.3",
+    "prisma": "^5.9.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
