@@ -29,6 +29,7 @@ model Facture {
   total         String
   title         String
   description   String
+  pdf           String @default("")
   createdAt     DateTime @default(now())
   updatedAt     DateTime?
 }
