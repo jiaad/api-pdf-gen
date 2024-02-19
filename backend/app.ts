@@ -8,15 +8,17 @@ import usersRouter from "./src/routes/users";
 import { PrismaClient } from "@prisma/client";
 import { genPdf } from "./src/utils/pdfGen";
 import { json } from "stream/consumers";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 const prisma = new PrismaClient();
 
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-//app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 //app.use("/users", usersRouter);

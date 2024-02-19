@@ -16,7 +16,7 @@ export async function genPdf(info: PdfInfoType) {
   // Create a document
   const doc = new PDFDocument();
   try {
-    const docTitle = `${info.title}_${info.factureId}.pdf`;
+    const docTitle = `public/factures/${info.title}_${info.factureId}.pdf`;
     doc.pipe(fs.createWriteStream(docTitle));
 
     doc.fontSize(12).text(
