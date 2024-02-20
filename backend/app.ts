@@ -9,9 +9,15 @@ import { PrismaClient } from "@prisma/client";
 import { genPdf } from "./src/utils/pdfGen";
 import { json } from "stream/consumers";
 import cors from "cors";
+import { log } from "console";
 
 const app = express();
 app.use(cors());
+
+console.log("-".repeat(100));
+console.log(process.env);
+console.log("-".repeat(100));
+
 const prisma = new PrismaClient();
 
 app.use(logger("dev"));

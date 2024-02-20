@@ -1,7 +1,9 @@
 import { Button, Flex, Form, Input } from "antd";
 import { useState } from "react";
 import { useClient } from "../contexts/clients";
+import { useForm } from "antd/es/form/Form";
 export default function ClientForm() {
+  const [form] = useForm();
   const [error, setError] = useState("");
 
   const { dispatch } = useClient();
@@ -19,6 +21,7 @@ export default function ClientForm() {
         console.log({ data });
         if (data.success) {
           dispatch({ type: "addClient", payload: data.data });
+          form.resetFields();
         } else {
           setError("Error appeared");
         }
@@ -28,7 +31,7 @@ export default function ClientForm() {
   return (
     <Flex vertical>
       {error && <p>{error}</p>}
-      <Form layout="vertical" onFinish={onFinish}>
+      <Form layout="vertical" onFinish={onFinish} form={form}>
         <Form.Item
           name={"firstName"}
           label="Votre nom"
@@ -45,7 +48,7 @@ export default function ClientForm() {
             { required: true, message: "veuillez-reinseigner votre prénom" },
           ]}
         >
-          <Input  pattern="[a-zA-Z]" />
+          <Input />
         </Form.Item>
         <Form.Item
           name={"email"}

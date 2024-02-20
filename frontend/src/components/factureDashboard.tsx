@@ -33,7 +33,7 @@ export default function FactureDashboard() {
   return (
     <Flex vertical>
       <Typography.Title level={1}>Dashboard Factures</Typography.Title>
-      <Table dataSource={state.factures} columns={columns} />
+      <Table dataSource={state.factures} columns={columns} rowKey={(record) => record.id} />
     </Flex>
   );
 }

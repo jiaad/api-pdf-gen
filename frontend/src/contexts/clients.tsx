@@ -1,8 +1,9 @@
 import { createContext, useContext, useReducer } from "react";
+import { ClientType } from '../components/types';
 const ClientContext = createContext<any | null>(null);
 ClientContext.displayName = "ClientContext";
 export type InitialState = {
-  clients: Array<object>;
+  clients: Array<ClientType>;
   factures: Array<object>;
 };
 // eslint-disable-next-line  @typescript-eslint/no-explicit-any
@@ -18,7 +19,7 @@ function clientReducer(state: InitialState, action: any) {
     case "deleteClient": {
       return {
         ...state,
-        clients: state.clients?.filter((elem) => elem?.id !== action.payload),
+        clients: state.clients?.filter((elem: ClientType) => elem?.id !== action.payload),
       };
     }
     case "factures": {

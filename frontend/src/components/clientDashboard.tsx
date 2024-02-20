@@ -57,7 +57,7 @@ export default function ClientDashboard() {
   return (
     <Flex vertical>
       <Typography.Title level={1}>Dashboard client</Typography.Title>
-      <Table dataSource={state.clients} columns={columns} />
+      <Table dataSource={state?.clients} columns={columns} rowKey={(record) => record.id}/>
     </Flex>
   );
 }

@@ -43,8 +43,6 @@ export default function FactureForm() {
                 {client.firstName} {client.lastName}
               </Select.Option>
             ))}
-            <Select.Option value="female">female</Select.Option>
-            <Select.Option value="other">other</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item
