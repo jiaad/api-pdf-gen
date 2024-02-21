@@ -2,11 +2,11 @@
 
 ### BACKEND
 
-    ```SHELL
+```SHELL
     cd backend
     docker compose up --build --force-recreate
     docker compose exec web npx prisma migrate reset
-    ```
+```
 
 ### BACKEND
 
